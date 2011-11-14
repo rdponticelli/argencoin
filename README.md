@@ -1,4 +1,13 @@
-Litecoin - a lite version of Bitcoin optimized for CPU mining using scrypt as a proof of work scheme.
+Attention: Argencoin source is still an exact clone of litecoin. Its features aren't
+yet even designed. Do not run it!!!!
+
+Argencoin - a localized argentine version of litecoin, which is itself
+            a lite version of Bitcoin optimized for CPU mining using scrypt as a
+            proof of work scheme. Agencoin aims at implementing merged mining
+            with litecoin.
+
+Argencoin features (still litcoin ones, open discussion):
+
  - 2.5 minute block targets
  - subsidy halves in 840k blocks (~4 years)
  - ~84 million total coins
