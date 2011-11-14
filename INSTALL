@@ -1,9 +1,9 @@
-Building Litecoin
+Building Argencoin
 
-See doc/readme-qt.rst for instructions on building Litecoin-QT,
+See doc/readme-qt.rst for instructions on building Argencoin-QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Litecoin.
+implementation of Argencoin.
 
-See doc/build-*.txt for instructions on building litecoind,
+See doc/build-*.txt for instructions on building argencoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Litecoin.
+implementation of Argencoin.
