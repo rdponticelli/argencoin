@@ -2,8 +2,8 @@
 // Copyright (c) 2011 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_MAIN_H
-#define BITCOIN_MAIN_H
+#ifndef ARGENCOIN_MAIN_H
+#define ARGENCOIN_MAIN_H
 
 #include "bignum.h"
 #include "net.h"
@@ -68,7 +68,7 @@ extern CCriticalSection cs_setpwalletRegistered;
 extern std::set<CWallet*> setpwalletRegistered;
 
 // Settings
-extern int fGenerateBitcoins;
+extern int fGenerateArgencoins;
 extern int64 nTransactionFee;
 extern int fLimitProcessors;
 extern int nLimitProcessors;
@@ -94,7 +94,7 @@ bool LoadBlockIndex(bool fAllowNew=true);
 void PrintBlockTree();
 bool ProcessMessages(CNode* pfrom);
 bool SendMessages(CNode* pto, bool fSendTrickle);
-void GenerateBitcoins(bool fGenerate, CWallet* pwallet);
+void GenerateArgencoins(bool fGenerate, CWallet* pwallet);
 CBlock* CreateNewBlock(CReserveKey& reservekey);
 void IncrementExtraNonce(CBlock* pblock, CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
 void FormatHashBuffers(CBlock* pblock, char* pmidstate, char* pdata, char* phash1);

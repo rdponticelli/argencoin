@@ -2,8 +2,8 @@
 // Copyright (c) 2011 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_NOUI_H
-#define BITCOIN_NOUI_H
+#ifndef ARGENCOIN_NOUI_H
+#define ARGENCOIN_NOUI_H
 
 #include <string>
 #include <boost/function.hpp>

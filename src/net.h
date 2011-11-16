@@ -2,8 +2,8 @@
 // Copyright (c) 2011 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_NET_H
-#define BITCOIN_NET_H
+#ifndef ARGENCOIN_NET_H
+#define ARGENCOIN_NET_H
 
 #include <deque>
 #include <boost/array.hpp>

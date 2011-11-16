@@ -1146,7 +1146,7 @@ void ThreadMapPort2(void* parg)
     {
         char intClient[16];
         char intPort[6];
-        string strDesc = "Litecoin " + FormatFullVersion();
+        string strDesc = "Argencoin " + FormatFullVersion();
         r = UPNP_AddPortMapping(urls.controlURL, data.first.servicetype,
 	                        port, port, lanaddr, strDesc.c_str(), "TCP", 0, "0");
 
@@ -1209,8 +1209,8 @@ void MapPort(bool /* unused fMapPort */)
 
 
 static const char *strDNSSeed[] = {
-    "litecoin.org",
-    "litecoin.andykellett.com",
+    "argencoin.org",
+    "argencoin.andykellett.com",
 };
 
 void DNSAddressSeed()
@@ -1603,7 +1603,7 @@ bool BindListenPort(string& strError)
     {
         int nErr = WSAGetLastError();
         if (nErr == WSAEADDRINUSE)
-            strError = strprintf(_("Unable to bind to port %d on this computer.  Litecoin is probably already running."), ntohs(sockaddr.sin_port));
+            strError = strprintf(_("Unable to bind to port %d on this computer.  Argencoin is probably already running."), ntohs(sockaddr.sin_port));
         else
             strError = strprintf("Error: Unable to bind to port %d on this computer (bind returned error %d)", ntohs(sockaddr.sin_port), nErr);
         printf("%s\n", strError.c_str());
@@ -1715,7 +1715,7 @@ void StartNode(void* parg)
         printf("Error: CreateThread(ThreadMessageHandler) failed\n");
 
     // Generate coins in the background
-    GenerateBitcoins(fGenerateBitcoins, pwalletMain);
+    GenerateArgencoins(fGenerateArgencoins, pwalletMain);
 }
 
 bool StopNode()
@@ -1737,7 +1737,7 @@ bool StopNode()
     if (vnThreadsRunning[0] > 0) printf("ThreadSocketHandler still running\n");
     if (vnThreadsRunning[1] > 0) printf("ThreadOpenConnections still running\n");
     if (vnThreadsRunning[2] > 0) printf("ThreadMessageHandler still running\n");
-    if (vnThreadsRunning[3] > 0) printf("ThreadBitcoinMiner still running\n");
+    if (vnThreadsRunning[3] > 0) printf("ThreadArgencoinMiner still running\n");
     if (vnThreadsRunning[4] > 0) printf("ThreadRPCServer still running\n");
     if (fHaveUPnP && vnThreadsRunning[5] > 0) printf("ThreadMapPort still running\n");
     while (vnThreadsRunning[2] > 0 || vnThreadsRunning[4] > 0)

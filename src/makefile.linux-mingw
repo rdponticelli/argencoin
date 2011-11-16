@@ -43,7 +43,7 @@ HEADERS = \
     net.h \
     noui.h \
     protocol.h \
-    bitcoinrpc.h \
+    argencoinrpc.h \
     script.h \
     scrypt.h \
     serialize.h \
@@ -70,13 +70,13 @@ OBJS= \
     obj/main.o \
     obj/net.o \
     obj/protocol.o \
-    obj/bitcoinrpc.o \
+    obj/argencoinrpc.o \
     obj/script.o \
     obj/scrypt.o \
     obj/util.o \
     obj/wallet.o
 
-all: litecoind.exe
+all: argencoind.exe
 
 obj/nogui/scrypt.o: scrypt.c
 	gcc -c -o $@ $^
@@ -84,14 +84,14 @@ obj/nogui/scrypt.o: scrypt.c
 obj/nogui/%.o: %.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(CFLAGS) -o $@ $<
 
-litecoind.exe: $(OBJS:obj/%=obj/nogui/%)
+argencoind.exe: $(OBJS:obj/%=obj/nogui/%)
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 
 obj/test/%.o: obj/test/%.cpp $(HEADERS)
 	i586-mingw32msvc-g++ -c $(CFLAGS) -o $@ $<
 
-test_bitcoin.exe: obj/test/test_bitcoin.o $(filter-out obj/nogui/init.o,$(OBJS:obj/%=obj/nogui/%))
+test_argencoin.exe: obj/test/test_argencoin.o $(filter-out obj/nogui/init.o,$(OBJS:obj/%=obj/nogui/%))
 	i586-mingw32msvc-g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lboost_unit_test_framework-mt-s
 
 
@@ -101,5 +101,5 @@ clean:
 	-rm -f obj/test/*.o
 	-rm -f test/*.o
 	-rm -f headers.h.gch
-	-rm -f litecoind.exe
-	-rm -f test_bitcoin.exe
+	-rm -f argencoind.exe
+	-rm -f test_argencoin.exe

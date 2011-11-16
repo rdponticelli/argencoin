@@ -40,7 +40,7 @@ HEADERS = \
     net.h \
     noui.h \
     protocol.h \
-    bitcoinrpc.h \
+    argencoinrpc.h \
     script.h \
     scrypt.h \
     serialize.h \
@@ -67,14 +67,14 @@ OBJS= \
     obj/main.o \
     obj/net.o \
     obj/protocol.o \
-    obj/bitcoinrpc.o \
+    obj/argencoinrpc.o \
     obj/script.o \
     obj/scrypt.o \
     obj/util.o \
     obj/wallet.o
 
 
-all: litecoind.exe
+all: argencoind.exe
 
 obj/nogui/scrypt.o: scrypt.c
 	gcc -c -o $@ $^
@@ -82,17 +82,17 @@ obj/nogui/scrypt.o: scrypt.c
 obj/nogui/%.o: %.cpp $(HEADERS)
 	g++ -c $(CFLAGS) -o $@ $<
 
-litecoind.exe: $(OBJS:obj/%=obj/nogui/%)
+argencoind.exe: $(OBJS:obj/%=obj/nogui/%)
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
-obj/test/test_bitcoin.o: $(wildcard test/*.cpp) $(HEADERS)
-	g++ -c $(CFLAGS) -o $@ test/test_bitcoin.cpp
+obj/test/test_argencoin.o: $(wildcard test/*.cpp) $(HEADERS)
+	g++ -c $(CFLAGS) -o $@ test/test_argencoin.cpp
 
-test_bitcoin.exe: obj/test/test_bitcoin.o $(filter-out obj/nogui/init.o,$(OBJS:obj/%=obj/nogui/%))
+test_argencoin.exe: obj/test/test_argencoin.o $(filter-out obj/nogui/init.o,$(OBJS:obj/%=obj/nogui/%))
 	g++ $(CFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 clean:
-	-del /Q litecoind test_bitcoin
+	-del /Q argencoind test_argencoin
 	-del /Q obj\*
 	-del /Q obj\nogui\*
 	-del /Q obj\test\*

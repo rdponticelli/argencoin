@@ -12,8 +12,8 @@
 // - E-mail usually won't line-break if there's no punctuation to break at.
 // - Doubleclicking selects the whole number as one word if it's all alphanumeric.
 //
-#ifndef BITCOIN_BASE58_H
-#define BITCOIN_BASE58_H
+#ifndef ARGENCOIN_BASE58_H
+#define ARGENCOIN_BASE58_H
 
 #include <string>
 #include <vector>
@@ -239,12 +239,12 @@ public:
 };
 
 
-class CBitcoinAddress : public CBase58Data
+class CArgencoinAddress : public CBase58Data
 {
 public:
     bool SetHash160(const uint160& hash160)
     {
-        SetData(fTestNet ? 111 : 48, &hash160, 20); // Litecoin addresses start with L
+        SetData(fTestNet ? 83 : 23, &hash160, 20); // Argencoin addresses start with A
         return true;
     }
 
@@ -259,10 +259,10 @@ public:
         bool fExpectTestNet = false;
         switch(nVersion)
         {
-            case 48: // Litecoin addresses start with L
+            case 23: // Argencoin addresses start with A
                 break;
 
-            case 111:
+            case 83:
                 fExpectTestNet = true;
                 break;
 
@@ -272,26 +272,26 @@ public:
         return fExpectTestNet == fTestNet && vchData.size() == nExpectedSize;
     }
 
-    CBitcoinAddress()
+    CArgencoinAddress()
     {
     }
 
-    CBitcoinAddress(uint160 hash160In)
+    CArgencoinAddress(uint160 hash160In)
     {
         SetHash160(hash160In);
     }
 
-    CBitcoinAddress(const std::vector<unsigned char>& vchPubKey)
+    CArgencoinAddress(const std::vector<unsigned char>& vchPubKey)
     {
         SetPubKey(vchPubKey);
     }
 
-    CBitcoinAddress(const std::string& strAddress)
+    CArgencoinAddress(const std::string& strAddress)
     {
         SetString(strAddress);
     }
 
-    CBitcoinAddress(const char* pszAddress)
+    CArgencoinAddress(const char* pszAddress)
     {
         SetString(pszAddress);
     }
