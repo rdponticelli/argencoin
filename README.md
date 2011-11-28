@@ -1,19 +1,13 @@
-Attention: Argencoin source is still an exact clone of litecoin. Its features aren't
-yet even designed. Do not run it!!!!
+Caution: Argencoin source isn't still ready. Its features are just
+been designed. Discusion is open on #argencoin on freenode.
 
-Argencoin - a localized argentine version of litecoin, which is itself
-            a lite version of Bitcoin optimized for CPU mining using scrypt as a
-            proof of work scheme. Agencoin aims at implementing merged mining
-            with litecoin.
-
-Argencoin features (still litcoin ones, open discussion):
-
- - 2.5 minute block targets
- - subsidy halves in 840k blocks (~4 years)
- - ~84 million total coins
-The rest is the same as bitcoin.
- - 50 coins per block
- - 2016 blocks to retarget difficulty
+Argencoin - Argencoin started as a fork of litecoin, which is itself
+            a lite version of Bitcoin optimized for CPU mining using scrypt as
+            a proof of work scheme. Agencoin aims at implementing merged mining
+            with litecoin and at being a framework for testing ideas for possible
+            radical changes on the core codebases of digital currencies.
+            One of such ideas is implementing some scheme for multiple
+            proof of work.
 
 Development process
 ===================
